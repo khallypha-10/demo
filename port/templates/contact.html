@@ -1,0 +1,61 @@
+{% extends 'navbar.html' %}
+{% load static %}
+{% block content %}
+
+
+   <!-- body -->
+   <body class="main-layout inner_page">
+      <!-- loader  -->
+      <div class="loader_bg">
+         <div class="loader"><img src="{% static 'images/loading.gif'%}" alt="#"/></div>
+      </div>
+      <!-- end loader -->
+      
+      <!-- contact -->
+      {% if messages %}
+      <div class="messages">
+         {% for message in messages %}
+            <div class="alert {% if message.tags %}alert-{{ message.tags }}"{% endif %}>
+               <i class="fa-solid fa-thumbs-up"></i> {{ message }}
+            </div>
+         {% endfor %}
+      </div>
+   {% endif %}
+      <div class="contact">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12 ">
+                  <div class="titlepage text_align_center">
+                     <h2>Contact Us</h2>
+                  </div>
+               </div>
+               
+               <div class="col-md-8 offset-md-2">
+                  <form id="request" class="main_form" method="post" action="{% url 'contact' %}" enctype="multipart/form-data">
+                     {% csrf_token %}
+                     <div class="row">
+                        <div class="col-md-12">
+                           <input class="form_control" placeholder="Subject" type="type" name="subject">                          
+                        </div>
+                        <div class="col-md-12 ">
+                           <input class="form_control" placeholder="Your name" type="type" name=" Name"> 
+                        </div>
+                        <div class="col-md-12">
+                           <input class="form_control" placeholder="Your email" type="type" name="Email"> 
+                        </div>
+                        <div class="col-md-12">
+                           <textarea class="textarea" placeholder="Your Message" type="type" name="message"> </textarea>
+                        </div>
+                        <div class="col-md-12">
+                           <button class="send_btn">Send Now</button>
+                        </div>
+                     </div>
+                  
+                  </form>
+                
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end contact -->
+{% endblock content %}      

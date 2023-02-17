@@ -1,0 +1,43 @@
+{% extends 'navbar.html' %}
+{% load static %}
+{% block content %}
+
+
+   <!-- body -->
+   <body class="main-layout inner_page portfolio_page">
+      <!-- loader  -->
+      <div class="loader_bg">
+         <div class="loader"><img src="{% static 'images/loading.gif'%}" alt="#"/></div>
+      </div>
+      <!-- end loader -->
+     
+      <!-- portfolio -->
+      <div class="portfolio">
+         <div class="container">
+            <div class="row">
+               
+               <div class="col-md-12">
+                  <div class="titlepage text_align_center ">
+                     <h2>Portfolio</h2>
+                     <p>Our featured projects </p>
+                  </div>
+               </div>
+            
+               
+               <div class="row d_flex">
+                  {% for port in portfolio %}
+                  <div class=" col-md-6">
+                     <div id="ho_img" class="portfolio_img">
+                        <figure><img src={{port.image.url}} alt="#"/></figure>
+                     </div>
+                  </div>
+                  {% endfor %}
+               </div>
+               
+            </div>
+            
+         </div>
+      </div>
+      <!-- end work -->
+      
+{% endblock content %}

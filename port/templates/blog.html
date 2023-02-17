@@ -1,0 +1,49 @@
+{% extends 'navbar.html' %}
+{% load static %}
+{% block content %}
+   <!-- body -->
+   <body class="main-layout inner_page">
+      <!-- loader  -->
+      <div class="loader_bg">
+         <div class="loader"><img src="{% static 'images/loading.gif'%}" alt="#"/></div>
+      </div>
+      <!-- end loader -->
+      
+      <!-- work -->
+      <div class="work">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage text_align_center ">
+                     <h2>Our blog</h2>
+                     <p>This is where our blog is. Enjoy! <i class="fa-regular fa-face-smile"></i> </p>
+                  </div>
+               </div>
+            </div>
+            <div class="row d_flex">
+               <div class=" col-md-6">
+                  <div id="ho_img" class="work_img">
+                     <figure><img src="{% static 'images/work2.jpg'%}" alt="#"/></figure>
+                  </div>
+                  <div class="work_box">
+                     <h3>Website Design</h3>
+                     <p>That beautful website you have always dreamed of having can be yours with our service. It can small or large scale.</p>
+                     
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <div id="ho_img" class="work_img">
+                     <figure><img src="{% static 'images/work1.jpg'%}" alt="#"/></figure>
+                  </div>
+                  <div class="work_box">
+                     <h3>App Design</h3>
+                     <p>We can customize and develop your apps too </p>
+                     
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end work -->
+      
+{% endblock content %}
